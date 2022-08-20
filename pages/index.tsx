@@ -9,6 +9,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Avatar from '@mui/material/Avatar';
 
 type Data = {
   employers: [
@@ -52,6 +53,9 @@ const Home = ({ swapis }: InferGetStaticPropsType<typeof getStaticProps>) => {
           </AccordionSummary>    
           <AccordionDetails>
           <Typography>
+            <Link href="https://wa.me/90421186">
+                <Avatar alt="Remy Sharp" src="https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Whatsapp-icon.png" />
+            </Link>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
