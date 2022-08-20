@@ -1,4 +1,14 @@
 import { InferGetStaticPropsType } from 'next';
+import * as React from 'react';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Link from '../src/Link';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 type Data = {
   employers: [
@@ -20,14 +30,37 @@ export const getStaticProps = async () => {
   };
 };
 
-const FilmList = ({ swapis }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ swapis }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <>
+    <Container maxWidth="lg">
+      <Box
+        sx={{
+          my: 4,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
       {Object.entries(swapis.employers).map(([key,employer]) => (
-          <p key={employer.name}>{employer.name}</p>
+        <Accordion key={employer.name} color="secondary">        
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header">
+              <Typography>{employer.name}</Typography>
+          </AccordionSummary>    
+          <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+        </Accordion>
       ))}
-    </>
+    </Box>      
+    </Container>
   );
 };
 
-export default FilmList;
+export default Home;
