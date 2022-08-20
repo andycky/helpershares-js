@@ -20,6 +20,12 @@ type Data = {
   ];
 };
 
+type BoxProps = {
+  name: string;
+  country: string;
+  children: React.ReactNode; // 👈️ added type for children
+};
+
 export const getStaticProps = async () => {
   const res = await fetch('https://script.google.com/macros/s/AKfycbyKW4XeaHWRlumGIyYzTsrdLtz8fOPJNufDf5fAabfDp7_iuwAIsWIdJnqyAJfEHhi6Ew/exec');
   const swapis: Data = await res.json();
@@ -53,9 +59,9 @@ const Home = ({ swapis }: InferGetStaticPropsType<typeof getStaticProps>) => {
           </AccordionSummary>    
           <AccordionDetails>
           <Typography>
-            <Link href="https://wa.me/90421186">
-                <Avatar alt="Remy Sharp" src="https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Whatsapp-icon.png" />
-            </Link>
+            <a href="https://wa.me/90421186">
+                <img width="50" src="https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Whatsapp-icon.png" />
+            </a>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
