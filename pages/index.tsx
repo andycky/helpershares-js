@@ -24,6 +24,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Divider } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -130,15 +131,9 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                          <TableContainer>
-                            <Table>
-                              <TableBody>
-                                <TableCell align="right"><Image src={helper.image} width="150" height="150"/></TableCell>
-                                <TableCell align="right"><Avatar>{helper.mark.length}</Avatar></TableCell>
-                                <TableCell align="right">{helper.name}</TableCell>
-                                </TableBody>
-                              </Table>
-                          </TableContainer>
+                                <div width={150}><Image src={helper.image} width="150" height="150"/></div>
+                                <div><Avatar>{helper.mark.length}</Avatar></div>
+                                <div>{helper.name}</div>
                         </AccordionSummary>    
                         <AccordionDetails>
                         </AccordionDetails>
