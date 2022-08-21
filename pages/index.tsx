@@ -24,6 +24,7 @@ type helperData = {
     employer: string;
     name: string;
     mobile: string;
+    image: string;
 };
 
 const address='https://script.google.com/macros/s/AKfycbyecJ_Fa6vNFkH34O9tByFvrMFfOOjBK35hNok1PpGalQUJ9v_YLJgdtxH3M_3AnzEH5A/exec'
@@ -101,7 +102,10 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                            <Typography>{helper.name}</Typography>
+                            <Typography>
+                              <Image src={helper.image} width="50%" height="50%" />
+                              {helper.name}
+                            </Typography>
                         </AccordionSummary>    
                     </Accordion>:"")}
                 </AccordionDetails>
