@@ -131,13 +131,11 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                                <div><Image src={helper.image} width="150" height="150"/></div>
-                                <div>
                                 <div><Avatar>{helper.mark.length}</Avatar></div>
-                                <div style={{position: 'absolute',  bottom:20}}>{helper.name}</div>
-                                </div>
+                                <div>{helper.name}</div>
                         </AccordionSummary>    
                         <AccordionDetails>
+                        <div><Image src={helper.image} width="150" height="150"/></div>
                         <div >{helper.mark_comment.split('\n').map(i => {
     return <p key={i}>{i}</p>})}</div>
                         </AccordionDetails>
