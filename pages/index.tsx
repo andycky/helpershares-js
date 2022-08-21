@@ -138,6 +138,7 @@ const Employers: NextPage = () => {
                                 </div>
                         </AccordionSummary>    
                         <AccordionDetails>
+                        <div >{helper.mark_comment}</div>
                         </AccordionDetails>
                     </Accordion>:"")}
                 </AccordionDetails>
