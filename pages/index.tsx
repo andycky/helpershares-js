@@ -133,7 +133,7 @@ const Employers: NextPage = () => {
                           <TableContainer>
                             <Table>
                               <TableBody>
-                                <TableCell align="right"><Image src={helper.image} width="100%" height="100%"/></TableCell>
+                                <TableCell align="right"><Image src={helper.image} width="150" height="150"/></TableCell>
                                 <TableCell align="right"><Avatar>{helper.mark.length}</Avatar></TableCell>
                                 <TableCell align="right">{helper.name}</TableCell>
                                 </TableBody>
