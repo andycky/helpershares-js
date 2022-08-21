@@ -1,3 +1,4 @@
+import InferNextPropsType from "infer-next-props-type"
 import { InferGetStaticPropsType } from 'next';
 import axios from "axios";
 import useSWR from "swr";
@@ -30,7 +31,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ data }: InferNextPropsType<typeof getStaticProps>) => {
   return (
     <Container maxWidth="lg">
       <Box
