@@ -138,7 +138,8 @@ const Employers: NextPage = () => {
                                 </div>
                         </AccordionSummary>    
                         <AccordionDetails>
-                        <div >{helper.mark_comment}</div>
+                        <div >{helper.mark_comment.split('\n').map(i => {
+    return <p key={i}>{i}</p>})}</div>
                         </AccordionDetails>
                     </Accordion>:"")}
                 </AccordionDetails>
