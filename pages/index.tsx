@@ -103,10 +103,12 @@ const Employers: NextPage = () => {
                           aria-controls="panel1a-content"
                           id="panel1a-header">
                             <Typography>
-                              <Image src={helper.image} width="50%" height="50%" />
                               {helper.name}
                             </Typography>
                         </AccordionSummary>    
+                        <AccordionDetails>
+                        <Image src={helper.image} width="100%" height="100%" />
+                        </AccordionDetails>
                     </Accordion>:"")}
                 </AccordionDetails>
                 </Accordion>)}
