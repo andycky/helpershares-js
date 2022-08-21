@@ -132,8 +132,10 @@ const Employers: NextPage = () => {
                           aria-controls="panel1a-content"
                           id="panel1a-header">
                                 <div><Image src={helper.image} width="150" height="150"/></div>
+                                <div>
                                 <div><Avatar>{helper.mark.length}</Avatar></div>
-                                <div>{helper.name}</div>
+                                <div style={{position: 'absolute',  bottom:0}}>{helper.name}</div>
+                                </div>
                         </AccordionSummary>    
                         <AccordionDetails>
                         </AccordionDetails>
