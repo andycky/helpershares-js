@@ -131,7 +131,7 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                                <div width={150}><Image src={helper.image} width="150" height="150"/></div>
+                                <div><Image src={helper.image} width="150" height="150"/></div>
                                 <div><Avatar>{helper.mark.length}</Avatar></div>
                                 <div>{helper.name}</div>
                         </AccordionSummary>    
