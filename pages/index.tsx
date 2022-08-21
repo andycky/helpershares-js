@@ -18,6 +18,12 @@ import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -103,7 +109,7 @@ const Employers: NextPage = () => {
                   </AccordionSummary>    
                   <AccordionDetails>
                     <Box sx={{ flexGrow: 1 }}>
-                      <Grid container spacing={1}>
+                      <Grid container spacing={3}>
                         <Grid xs={1}>
                           <Link href={"https://wa.me/"+employer.mobile}>
                             <img width="50" src="https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Whatsapp-icon.png" />
@@ -124,19 +130,15 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                                <Box sx={{ flexGrow: 1 }}>
-                                  <Grid container spacing={3}>
-                                    <Grid xs>
-                                      <Item><Image src={helper.image} width="100%" height="100%"/></Item>
-                                    </Grid>
-                                    <Grid xs>
-                                      <Item><Avatar>{helper.mark.length}</Avatar></Item>
-                                    </Grid>
-                                    <Grid xs>
-                                      <Item>{helper.name}</Item>
-                                    </Grid>
-                                  </Grid>
-                                </Box>
+                          <TableContainer component={Paper}>
+                            <Table>
+                              <TableBody>
+                                <TableCell align="right"><Image src={helper.image} width="100%" height="100%"/></TableCell>
+                                <TableCell align="right"><Avatar>{helper.mark.length}</Avatar></TableCell>
+                                <TableCell align="right">{helper.name}</TableCell>
+                                </TableBody>
+                              </Table>
+                          </TableContainer>
                         </AccordionSummary>    
                         <AccordionDetails>
                         </AccordionDetails>
