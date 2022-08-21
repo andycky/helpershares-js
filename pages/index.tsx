@@ -134,7 +134,7 @@ const Employers: NextPage = () => {
                                 <div><Image src={helper.image} width="150" height="150"/></div>
                                 <div>
                                 <div><Avatar>{helper.mark.length}</Avatar></div>
-                                <div style={{position: 'absolute',  bottom:0}}>{helper.name}</div>
+                                <div style={{position: 'absolute',  bottom:20}}>{helper.name}</div>
                                 </div>
                         </AccordionSummary>    
                         <AccordionDetails>
