@@ -130,7 +130,7 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                          <TableContainer component={Paper}>
+                          <TableContainer>
                             <Table>
                               <TableBody>
                                 <TableCell align="right"><Image src={helper.image} width="100%" height="100%"/></TableCell>
