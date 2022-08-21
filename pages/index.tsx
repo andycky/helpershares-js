@@ -103,7 +103,7 @@ const Employers: NextPage = () => {
                   </AccordionSummary>    
                   <AccordionDetails>
                     <Box sx={{ flexGrow: 1 }}>
-                      <Grid container spacing={3}>
+                      <Grid container spacing={1}>
                         <Grid xs={1}>
                           <Link href={"https://wa.me/"+employer.mobile}>
                             <img width="50" src="https://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Whatsapp-icon.png" />
@@ -126,17 +126,14 @@ const Employers: NextPage = () => {
                           id="panel1a-header">
                                 <Box sx={{ flexGrow: 1 }}>
                                   <Grid container spacing={3}>
-                                    <Grid xs={2}>
+                                    <Grid xs>
                                       <Item><Image src={helper.image} width="100%" height="100%"/></Item>
                                     </Grid>
-                                    <Grid xs={1.1}>
+                                    <Grid xs>
                                       <Item><Avatar>{helper.mark.length}</Avatar></Item>
                                     </Grid>
-                                    <Grid  xs={2}>
-                                      <Item>{helper.name}</Item>
-                                    </Grid>
                                     <Grid xs>
-                                      <Item>{helper.mark_comment}</Item>
+                                      <Item>{helper.name}</Item>
                                     </Grid>
                                   </Grid>
                                 </Box>
