@@ -14,6 +14,18 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Unstable_Grid2';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 type employerData = {
   name: string;
@@ -25,9 +37,11 @@ type helperData = {
     name: string;
     mobile: string;
     image: string;
+    mark: string;
+    mark_comment: string;
 };
 
-const address='https://script.google.com/macros/s/AKfycby64k8jLpzh0Tzm01deNKKcUtlo6jxPuiAPdDxNf4y2ptVLaPZTkfdHgPVe-LtZRNBOMw/exec'
+const address='https://script.google.com/macros/s/AKfycbyLAfHgGOYL1kaEZ2wKgkLJcGBOEtdQ_gLfsJYFqT6i8LxO4e-mrHELKgkUJUuRHLqugw/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -102,10 +116,22 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                            <Typography>
-                              <Image src={helper.image} width="100%" height="100%"/>
-                              {helper.name}
-                            </Typography>
+                                <Box sx={{ flexGrow: 1 }}>
+                                  <Grid container spacing={3}>
+                                    <Grid xs={2}>
+                                      <Item><Image src={helper.image} width="100%" height="100%"/></Item>
+                                    </Grid>
+                                    <Grid xs={1.1}>
+                                      <Item><Avatar>{helper.mark.length}</Avatar></Item>
+                                    </Grid>
+                                    <Grid  xs={2}>
+                                      <Item>{helper.name}</Item>
+                                    </Grid>
+                                    <Grid xs>
+                                      <Item>{helper.mark_comment}</Item>
+                                    </Grid>
+                                  </Grid>
+                                </Box>
                         </AccordionSummary>    
                         <AccordionDetails>
                         </AccordionDetails>
