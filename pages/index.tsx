@@ -1,5 +1,6 @@
 import {NextPage} from 'next';
-import axios from 'axios';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';import axios from 'axios';
 import {useEffect, useState} from "react";
 import Head from 'next/head'
 import useSWR from "swr";
@@ -37,6 +38,7 @@ const Item = styled(Paper)(({ theme }) => ({
 type employerData = {
   name: string;
   mobile: string;
+  match: string;
 };
 
 type helperData = {
@@ -107,7 +109,8 @@ const Employers: NextPage = () => {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                      <Typography>{employer.name}</Typography>
+                      <div>{employer.name}</div>
+                      {(employer.match!="")?<div><Chip sx={{ height: 25 }} label={employer.match} /></div>:""}
                   </AccordionSummary>    
                   <AccordionDetails>
                     <Box sx={{ flexGrow: 1 }}>
