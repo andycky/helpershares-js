@@ -176,7 +176,7 @@ const Employers: NextPage = () => {
               >
               {isLoading ? 
                 <div>
-                   <img src="./logo.jfif" /><br/>
+                   <Image src="/logo.jfif" width={300} height={300}/><br/>
                           Loading...</div> :
                   employers.map(employer => 
                 <Accordion key={employer.name} color="secondary" sx={{width:394}}>        
