@@ -55,12 +55,20 @@ type helperData = {
     name: string;
     mobile: string;
     image: string;
-    mark: string;
+    service: string;
+    N2: string;
+    L2: string;
+      A: string;
+    D2: string;
+    R2: string;
+    H2: string;
+    G2: string;
+        mark: string;
     mark_comment: string;
     color: string;
 };
 
-const address='https://script.google.com/macros/s/AKfycbygX4n4zTfiUyLNkv5PnWuyLntB6lX0nbWfWrYUE1xCoae0P4F6aDMWEkdmgL7vJMeS_g/exec'
+const address='https://script.google.com/macros/s/AKfycbyXCf12Wl8CYb-vimxXUeOJyYYO-zBlNCmXGXFLqR6cgPG-2DOvZqOKl7zKkz8w9x16BQ/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -138,7 +146,7 @@ const Employers: NextPage = () => {
                       </Grid>
                     </Box>
                     <div style={{fontSize:13}}>
-                    {employer.service} | {employer.N} |  {employer.L} |  {employer.age} | {employer.D2} | {employer.R2} | {employer.H2} |
+                    {employer.service} | {employer.N} |  {employer.L} |  {employer.age} | {employer.D2} | {employer.R2} | {employer.H2} | 
                     {employer.G2}  
                     </div>
                     {helpers.map(helper => (helper.employer==employer.name)?
@@ -147,8 +155,14 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                                <div><Avatar style={{backgroundColor: helper.color}} sx={{ width: 25, height: 25 }}>{helper.mark.length}</Avatar></div>
-                                <div>{helper.name}</div>
+                                <div><Avatar style={{backgroundColor: helper.color}} sx={{ width: 26, height: 26 }}>{helper.mark.length}</Avatar></div>
+                                <div>
+                                  <div>{helper.name}</div>
+                                  <div style={{fontSize:13}}>
+                                  {helper.service} | {helper.N2} | {helper.L2} | {helper.A}| {employer.D2} | {employer.R2} | {employer.H2} | 
+                    {employer.G2}  
+                                  </div>
+                                </div>
                         </AccordionSummary>    
                         <AccordionDetails>
                         <div><Image src={helper.image} width="150" height="150"/></div>
