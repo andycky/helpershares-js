@@ -11,6 +11,10 @@ const nextConfig = {
           },    
           {
             protocol: 'https',
+            hostname: 'https://helpersharesjs.herokuapp.com/',
+          },    
+          {
+            protocol: 'https',
             hostname: 'drive.google.com',
           },    
           ],
