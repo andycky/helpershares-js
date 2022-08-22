@@ -39,6 +39,8 @@ type employerData = {
   name: string;
   mobile: string;
   match: string;
+  status: string;
+  service: string;
 };
 
 type helperData = {
@@ -51,7 +53,7 @@ type helperData = {
     color: string;
 };
 
-const address='https://script.google.com/macros/s/AKfycbzJgAoC1I3QJiBsy6o6bGPx6RoF1o11qZefFYpJDf8bgpwWUAwu8bFTH2qMSbSKqNzPUA/exec'
+const address='https://script.google.com/macros/s/AKfycbw9c05t2uv3t-dljS9C6rOkjt5y303y1N34ulpQwcOizjsgoBDesiuMCdd1RJb_9XF3zg/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -104,13 +106,14 @@ const Employers: NextPage = () => {
               >
               {isLoading ? <div>Loading...</div> :
                   employers.map(employer => 
-                <Accordion key={employer.name} color="secondary">        
+                <Accordion key={employer.name} color="secondary" sx={{width:828}}>        
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                      <div>{employer.name}</div>
+                      <div>{employer.name}</div>&nbsp;
                       {(employer.match!="")?<div><Chip sx={{ height: 25 }} label={employer.match} /></div>:""}
+                      &nbsp;<div style={{fontSize:11}}>{employer.status}</div>
                   </AccordionSummary>    
                   <AccordionDetails>
                     <Box sx={{ flexGrow: 1 }}>
@@ -127,8 +130,7 @@ const Employers: NextPage = () => {
                         </Grid>
                       </Grid>
                     </Box>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    {employer.service} | 
                     {helpers.map(helper => (helper.employer==employer.name)?
                       <Accordion key={helper.name} color="secondary">        
                         <AccordionSummary
