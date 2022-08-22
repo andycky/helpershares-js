@@ -106,7 +106,7 @@ const Employers: NextPage = () => {
               >
               {isLoading ? <div>Loading...</div> :
                   employers.map(employer => 
-                <Accordion key={employer.name} color="secondary" sx={{width:828}}>        
+                <Accordion key={employer.name} color="secondary" sx={{width:414}}>        
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
