@@ -230,7 +230,9 @@ const Employers: NextPage = () => {
                         <AccordionDetails>
                         <List dense sx={{ width: '100%'}} disablePadding>
                           <ListItem disablePadding>
-                            <Image src={helper.image} width="150" height="150"/>
+                            <Link href={helper.link}>
+                              <Image src={helper.image} width="150" height="150"/>
+                            </Link>
                             <List dense sx={{ width: '100%'}} disablePadding>
                               <ListItem disablePadding>
                                 {(helper.active!="")?
