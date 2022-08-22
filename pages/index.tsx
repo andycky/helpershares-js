@@ -69,8 +69,9 @@ type helperData = {
     R2: string;
     H2: string;
     G2: string;
-        mark: string;
+    mark: string;
     mark_comment: string;
+    remark: string;
     color: string;
 };
 
@@ -161,11 +162,12 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                          <List dense sx={{ width: '100%'}}>
+                          <List dense sx={{ width: '100%'}} disablePadding>
                             <ListItem disablePadding>
                               <Avatar style={{backgroundColor: helper.color}} sx={{ width: 26, height: 26 }}>{helper.mark.length}</Avatar>
                               {helper.name.split(' ')[0].split('-')[0]}
                               {(helper.match!=""&&helper.match!=undefined)?<Chip sx={{ height: 25 }} label={helper.match} />:""}
+                              <div style={{fontSize:11}}>{helper.remark}</div>
                             </ListItem>
                             <ListItem style={{fontSize:13}} disablePadding>
                               {helper.service} | {helper.N2} | {helper.L2} | {helper.A}| {employer.D2} | {employer.R2} | {employer.H2} | 
