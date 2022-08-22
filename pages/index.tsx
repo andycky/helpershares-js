@@ -77,7 +77,7 @@ type helperData = {
 };
 
 const address='https://script.google.com/macros/s/AKfycbyXCf12Wl8CYb-vimxXUeOJyYYO-zBlNCmXGXFLqR6cgPG-2DOvZqOKl7zKkz8w9x16BQ/exec'
-const pdfAddress='https://script.google.com/macros/s/AKfycbwrbOAbfglrV3a4dDqEYS8XXokXp3atVvj8M-Y1x4PjIuaZJgkMWMPMSSvp5rthxzRR/exec'
+const pdfAddress='https://script.google.com/macros/s/AKfycby8qVGlrlIOhhYtYGyyazkcXISlmRuSyGZRAfaZPXMqJ8_KN2seICWMGitM1MA1T7Gq/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
