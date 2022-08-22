@@ -31,6 +31,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -167,6 +168,7 @@ const Employers: NextPage = () => {
                               <Avatar style={{backgroundColor: helper.color}} sx={{ width: 26, height: 26 }}>{helper.mark.length}</Avatar>
                               {helper.name.split(' ')[0].split('-')[0]}
                               {(helper.match!=""&&helper.match!=undefined)?<Chip sx={{ height: 25 }} label={helper.match} />:""}
+                              <ArrowRightIcon/>
                               <div style={{fontSize:11}}>{helper.remark}</div>
                             </ListItem>
                             <ListItem style={{fontSize:13}} disablePadding>
