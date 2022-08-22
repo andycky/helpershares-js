@@ -11,7 +11,7 @@ const nextConfig = {
           },    
           {
             protocol: 'https',
-            hostname: 'https://helpersharesjs.herokuapp.com/',
+            hostname: 'helpersharesjs.herokuapp.com',
           },    
           {
             protocol: 'https',
