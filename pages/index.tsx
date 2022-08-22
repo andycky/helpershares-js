@@ -46,9 +46,10 @@ type helperData = {
     image: string;
     mark: string;
     mark_comment: string;
+    color: string;
 };
 
-const address='https://script.google.com/macros/s/AKfycbyZvywZ1NAUR7KSRPww-cvVg-px83vCl5by-QGgdLwEDPAiW3-IK2iy7yFRkF4N3ETnjg/exec'
+const address='https://script.google.com/macros/s/AKfycbzJgAoC1I3QJiBsy6o6bGPx6RoF1o11qZefFYpJDf8bgpwWUAwu8bFTH2qMSbSKqNzPUA/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -131,7 +132,7 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                                <div><Avatar sx={{ width: 24, height: 24 }}>{helper.mark.length}</Avatar></div>
+                                <div><Avatar style={{backgroundColor: helper.color}} sx={{ width: 25, height: 25 }}>{helper.mark.length}</Avatar></div>
                                 <div>{helper.name}</div>
                         </AccordionSummary>    
                         <AccordionDetails>
