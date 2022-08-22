@@ -59,6 +59,7 @@ type helperData = {
     employer: string;
     name: string;
     mobile: string;
+    match: string;
     image: string;
     service: string;
     N2: string;
@@ -163,7 +164,8 @@ const Employers: NextPage = () => {
                           <List dense sx={{ width: '100%'}}>
                             <ListItem disablePadding>
                               <Avatar style={{backgroundColor: helper.color}} sx={{ width: 26, height: 26 }}>{helper.mark.length}</Avatar>
-                              {helper.name}
+                              {helper.name.split(' ')[0].split('-')[0]}
+                              {(helper.match!=""&&helper.match!=undefined)?<Chip sx={{ height: 25 }} label={helper.match} />:""}
                             </ListItem>
                             <ListItem style={{fontSize:13}} disablePadding>
                               {helper.service} | {helper.N2} | {helper.L2} | {helper.A}| {employer.D2} | {employer.R2} | {employer.H2} | 
