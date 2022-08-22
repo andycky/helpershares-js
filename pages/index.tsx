@@ -77,7 +77,7 @@ type helperData = {
 };
 
 const address='https://script.google.com/macros/s/AKfycbyXCf12Wl8CYb-vimxXUeOJyYYO-zBlNCmXGXFLqR6cgPG-2DOvZqOKl7zKkz8w9x16BQ/exec'
-const pdfAddress='https://script.google.com/macros/s/AKfycbzORAZygz84twUqeUIwG7sBsNvCA1dyBAiZJ8C3lz_-i6hKWrnwBXqtqKKnJtoyRoWU/exec'
+const pdfAddress='https://script.google.com/macros/s/AKfycbwrbOAbfglrV3a4dDqEYS8XXokXp3atVvj8M-Y1x4PjIuaZJgkMWMPMSSvp5rthxzRR/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -86,9 +86,9 @@ const Employers: NextPage = () => {
       const [isLoading, setIsLoading] = useState(false);
 
 
-      const downloadPDF= async () => {
+      const downloadPDF= async (helper:string) => {
 
-        const req = await fetch(pdfAddress);
+        const req = await fetch(pdfAddress+"?helper="+helper);
         const pdf = await req.text();
 
         const linkSource = `data:application/pdf;base64,${pdf}`;
@@ -196,7 +196,7 @@ const Employers: NextPage = () => {
                         <List dense sx={{ width: '100%'}} disablePadding>
                           <ListItem disablePadding>
                             <Image src={helper.image} width="150" height="150"/>
-                            <Button onClick={downloadPDF}>
+                            <Button onClick={() => downloadPDF(helper.name)}>
                               <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdH_7-oisrsxkrOE41kj5dHBs-DdkkkFbHsg&usqp=CAU" />
                             </Button>
                           </ListItem>
