@@ -31,6 +31,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Alert from '@mui/material/Alert';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { render } from 'react-dom';
 
@@ -88,7 +89,7 @@ const API_NAME_SEND_JO="sendJo";
 const API_NAME_ADD_RECORD_EM="addRecordEmployer";
 const API_NAME_ADD_HP_HELPER="addHpHelper";
 
-const address='https://script.google.com/macros/s/AKfycbw2rUXPG0ZaS65FdWmxdq9pMn-1KlkLTGoigz27R_SBBgOTTuFVJD14I7ZHqo54n3KaJg/exec'
+const address='https://script.google.com/macros/s/AKfycbx4MnLOIfkCVI64wi8cYKbnS9CvATy0MAxIqbCNw3rZuMm8rBSNgFaNJFUTcPn3QtDXgw/exec'
 const pdfAddress='https://script.google.com/macros/s/AKfycbyEAis0HzILKM7Kyumkp5ibfajQHH94mKfLAGFaP8HM8vjxeoZMqR_dHjE6Smc6RyOJ/exec'
 
 const SUCCESS="SUCCESS"
@@ -134,7 +135,7 @@ const Employers: NextPage = () => {
           console.log("newData="+newData)
           helper.active="ok";
           helper.color="green";
-          helper.name=newData;
+          //helper.name=newData;
           fetchData(API_NAME_HELPERDATA_BY_EM,helper)
         }
       };
@@ -173,7 +174,10 @@ const Employers: NextPage = () => {
                   alignItems: 'center',
                 }}
               >
-              {isLoading ? <div>Loading...</div> :
+              {isLoading ? 
+                <div>
+                   <img src="./logo.jfif" /><br/>
+                          Loading...</div> :
                   employers.map(employer => 
                 <Accordion key={employer.name} color="secondary" sx={{width:394}}>        
                   <AccordionSummary
