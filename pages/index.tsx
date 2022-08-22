@@ -77,6 +77,7 @@ type helperData = {
 };
 
 const address='https://script.google.com/macros/s/AKfycbyXCf12Wl8CYb-vimxXUeOJyYYO-zBlNCmXGXFLqR6cgPG-2DOvZqOKl7zKkz8w9x16BQ/exec'
+const pdfAddress='https://script.google.com/macros/s/AKfycbzORAZygz84twUqeUIwG7sBsNvCA1dyBAiZJ8C3lz_-i6hKWrnwBXqtqKKnJtoyRoWU/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -84,6 +85,20 @@ const Employers: NextPage = () => {
       const [helpers, setHelpers] = useState<helperData[]>([]);
       const [isLoading, setIsLoading] = useState(false);
 
+
+      const downloadPDF= async () => {
+
+        const req = await fetch(pdfAddress);
+        const pdf = await req.text();
+
+        const linkSource = `data:application/pdf;base64,${pdf}`;
+        const downloadLink = document.createElement("a");
+        const fileName = "HelperCV.pdf";
+
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
+      };
 
 
       const fetchData = async (employerName:string) => {
@@ -178,7 +193,14 @@ const Employers: NextPage = () => {
                           </List>
                         </AccordionSummary>    
                         <AccordionDetails>
-                        <div><Image src={helper.image} width="150" height="150"/></div>
+                        <List dense sx={{ width: '100%'}} disablePadding>
+                          <ListItem disablePadding>
+                            <Image src={helper.image} width="150" height="150"/>
+                            <Button onClick={downloadPDF}>
+                              <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdH_7-oisrsxkrOE41kj5dHBs-DdkkkFbHsg&usqp=CAU" />
+                            </Button>
+                          </ListItem>
+                        </List>
                         <div >{helper.mark_comment.split('\n').map(i => {
     return <p key={i}>{i}</p>})}</div>
                         </AccordionDetails>
