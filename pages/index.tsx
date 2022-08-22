@@ -41,6 +41,7 @@ type employerData = {
   match: string;
   status: string;
   service: string;
+  N: string;
 };
 
 type helperData = {
@@ -106,7 +107,7 @@ const Employers: NextPage = () => {
               >
               {isLoading ? <div>Loading...</div> :
                   employers.map(employer => 
-                <Accordion key={employer.name} color="secondary" sx={{width:414}}>        
+                <Accordion key={employer.name} color="secondary" sx={{width:404}}>        
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -130,7 +131,7 @@ const Employers: NextPage = () => {
                         </Grid>
                       </Grid>
                     </Box>
-                    {employer.service} | 
+                    {employer.service} | {employer.N} | 
                     {helpers.map(helper => (helper.employer==employer.name)?
                       <Accordion key={helper.name} color="secondary">        
                         <AccordionSummary
