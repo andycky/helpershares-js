@@ -26,6 +26,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Divider } from '@mui/material';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -155,14 +160,16 @@ const Employers: NextPage = () => {
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header">
-                                <div><Avatar style={{backgroundColor: helper.color}} sx={{ width: 26, height: 26 }}>{helper.mark.length}</Avatar></div>
-                                <div>
-                                  <div>{helper.name}</div>
-                                  <div style={{fontSize:13}}>
-                                  {helper.service} | {helper.N2} | {helper.L2} | {helper.A}| {employer.D2} | {employer.R2} | {employer.H2} | 
-                    {employer.G2}  
-                                  </div>
-                                </div>
+                          <List dense sx={{ width: '100%'}}>
+                            <ListItem disablePadding>
+                              <Avatar style={{backgroundColor: helper.color}} sx={{ width: 26, height: 26 }}>{helper.mark.length}</Avatar>
+                              {helper.name}
+                            </ListItem>
+                            <ListItem style={{fontSize:13}} disablePadding>
+                              {helper.service} | {helper.N2} | {helper.L2} | {helper.A}| {employer.D2} | {employer.R2} | {employer.H2} | 
+                              {employer.G2}  
+                            </ListItem>
+                          </List>
                         </AccordionSummary>    
                         <AccordionDetails>
                         <div><Image src={helper.image} width="150" height="150"/></div>
