@@ -42,6 +42,12 @@ type employerData = {
   status: string;
   service: string;
   N: string;
+  L: string;
+  age: string;
+  D2: string;
+  R2: string;
+  H2: string;
+  G2: string;
 };
 
 type helperData = {
@@ -54,7 +60,7 @@ type helperData = {
     color: string;
 };
 
-const address='https://script.google.com/macros/s/AKfycbw9c05t2uv3t-dljS9C6rOkjt5y303y1N34ulpQwcOizjsgoBDesiuMCdd1RJb_9XF3zg/exec'
+const address='https://script.google.com/macros/s/AKfycbygX4n4zTfiUyLNkv5PnWuyLntB6lX0nbWfWrYUE1xCoae0P4F6aDMWEkdmgL7vJMeS_g/exec'
 
 const Employers: NextPage = () => {
       // [] 表示只在第一次渲染的时候请求
@@ -131,7 +137,10 @@ const Employers: NextPage = () => {
                         </Grid>
                       </Grid>
                     </Box>
-                    {employer.service} | {employer.N} | 
+                    <div style={{fontSize:13}}>
+                    {employer.service} | {employer.N} |  {employer.L} |  {employer.age} | {employer.D2} | {employer.R2} | {employer.H2} |
+                    {employer.G2}  
+                    </div>
                     {helpers.map(helper => (helper.employer==employer.name)?
                       <Accordion key={helper.name} color="secondary">        
                         <AccordionSummary
